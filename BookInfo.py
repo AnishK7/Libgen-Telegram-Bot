@@ -121,6 +121,8 @@ class BookInfoProvider:
                 os.makedirs('book')
 
             #wget.download(dl,'book/' + path)
+            header = {'User-Agent': 'Aditya7069 Telegram Bot'}
+            r = requests.get(url = dl, headers = header)
             with open('book/' + path, 'wb') as f:
                 f.write(r.content)
                 f.close()
