@@ -4,8 +4,15 @@
 from BookInfo import BookInfoProvider
 from common import TELEGRAM_ACCESS_TOKEN, logging, logger, mode, HEROKU_APP_NAME
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import os, shutil, sys
-from urllib.parse import unquote
+import os, sys
+
+
+
+# Create the EventHandler and pass it your bot's token.
+updater = Updater(token = TELEGRAM_ACCESS_TOKEN, use_context=True)
+
+# Get the dispatcher to register handlers
+dp = updater.dispatcher
 
 if mode == "dev":
     def run(updater):
@@ -52,12 +59,6 @@ def error_callback(update, context):
 
 def main():
     """Start the bot."""
-
-    # Create the EventHandler and pass it your bot's token.
-    updater = Updater(token = TELEGRAM_ACCESS_TOKEN, use_context=True)
-
-    # Get the dispatcher to register handlers
-    dp = updater.dispatcher
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
