@@ -20,7 +20,6 @@ if mode == "dev":
 elif mode == "prod":
     def run(updater):
         PORT = int(os.environ.get("PORT", "8443"))
-        HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME")
         # Code from https://github.com/python-telegram-bot/python-telegram-bot/wiki/Webhooks#heroku
         updater.start_webhook(listen="0.0.0.0",
                               port=PORT,
@@ -35,6 +34,7 @@ else:
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(update,context):
     """Send a message when the command /start is issued."""
+    print('Start')
     update.message.reply_text('Hi! Type your book title, I will try to find it.')
 
 
