@@ -58,8 +58,6 @@ def error_callback(update, context):
 
 
 def main():
-    """Start the bot."""
-
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
