@@ -125,7 +125,7 @@ class BookInfoProvider:
             #wget.download(dl,'book/' + path)
             header = {'User-Agent': 'Aditya7069 Telegram Bot'}
             r = requests.get(url = dl, headers = header)
-            with open('book/' + path.strip('/'), 'wb') as f:
+            with open('book/' + path.strip('/') + book['id'], 'wb') as f:
                 f.write(r.content)
                 f.close()
             print("Done")
