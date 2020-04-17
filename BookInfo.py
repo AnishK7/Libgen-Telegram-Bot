@@ -120,7 +120,11 @@ class BookInfoProvider:
             if not os.path.exists('book'):
                 os.makedirs('book')
 
-            wget.download(dl,'book/' + path)
+            #wget.download(dl,'book/' + path)
+            with open('book/' + path, 'wb') as f:
+                f.write(r.content)
+                f.close()
+
 
         except Exception as e:
             print('Got error:', e)
