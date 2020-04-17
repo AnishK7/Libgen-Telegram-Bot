@@ -49,7 +49,7 @@ def echo(update,context):
     books = provider.load_book_list(update.message.text, 'title')
     for book in books:
         update.message.reply_text(str(book))
-        loc = 'book/' + book.title
+        loc = 'book/' + book.title.strip('/')
         context.bot.send_document(chat_id=update.message.chat_id, document=open(loc, 'rb'),timeout = 120)
         os.remove(loc)
 
