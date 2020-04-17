@@ -104,6 +104,7 @@ class BookInfoProvider:
             
             # Get download links
             links = list()
+            next(it)
             for link in next(it).find_all('a'):
                 download_link = self.__get_download_link(link['href'])
                 if download_link is not None:
@@ -115,6 +116,7 @@ class BookInfoProvider:
 
             book['links'] = links
             dl = book['links'][0]
+            print(dl)
             print('Download')
             path = filename
             if not os.path.exists('book'):
@@ -141,7 +143,7 @@ class BookInfoProvider:
             response = urllib.request.urlopen(request)
             soup = BeautifulSoup(response, 'html.parser')
 
-            long_link = soup.find_all('a', href=True, text='GET')[1]['href']
+            long_link = soup.find_all('a', href=True, text='GET')[0]['href']
 
         except urllib.error.HTTPError as e:
             # Return code error (e.g. 404, 501, ...)
