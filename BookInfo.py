@@ -126,6 +126,7 @@ class BookInfoProvider:
             with open('book/' + path.strip('/'), 'wb') as f:
                 f.write(r.content)
                 f.close()
+            print("Done")
 
 
         except Exception as e:
