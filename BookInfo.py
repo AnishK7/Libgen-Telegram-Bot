@@ -68,7 +68,7 @@ class BookInfoProvider:
         table = soup.find('table', attrs={'class': 'c'})
         table_rows = table.findAll('tr', recursive=False)[1:]
         book_list = list()
-        for row in table_rows[:10]:
+        for row in table_rows[:6]:
             book_list.append(BookInfo(self.__extract_book(row)))
 
         return book_list
