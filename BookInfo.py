@@ -141,7 +141,7 @@ class BookInfoProvider:
             response = urllib.request.urlopen(request)
             soup = BeautifulSoup(response, 'html.parser')
 
-            long_link = soup.find_all('a', href=True, text='GET')[0]['href']
+            long_link = soup.find_all('a', href=True, text='GET')[1]['href']
 
         except urllib.error.HTTPError as e:
             # Return code error (e.g. 404, 501, ...)
