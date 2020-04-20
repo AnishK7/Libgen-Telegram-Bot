@@ -6,8 +6,8 @@ import logging
 # TELEGRAM_ACCESS_TOKEN = os.getenv("TOKEN")
 
 mode = "prod"
-TELEGRAM_ACCESS_TOKEN = "938130802:AAGbowLZIwP9qWfCpzdVInUH8btZ0Rddzzw"
-HEROKU_APP_NAME = "libgens-bot"
+TELEGRAM_ACCESS_TOKEN = ""
+HEROKU_APP_NAME = ""
 LIBGEN_DOMAIN = "https://libgen.is/"
 
 # Enable logging
